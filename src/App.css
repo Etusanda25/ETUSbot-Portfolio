@@ -1,0 +1,376 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+
+  background:radial-gradient(circle at top,#183153,#0f172a 45%,#050816);
+  color:white;
+  overflow-x:hidden;
+}
+
+.office{
+ min-height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ padding:30px;
+}
+
+.hero h1{
+  font-size:52px;
+  line-height:1.1;
+  margin-bottom:18px;
+  font-weight:700;
+  max-width:580px;
+  margin:auto;
+  line-height:1.15;
+  animation: titleSlide 1.2s ease-out forwards;
+  opacity:0;
+}
+
+.hero span{
+  animation:glow 2.5s infinite alternate;
+  color:#00f5ff;
+  text-shadow:0 0 10px #00f5ff,
+  0 0 20px #00f5ff,
+  0 0 40px #00f5ff,
+  0 0 70px #00f5ff,
+}
+
+.hero p{
+  color:#dbeafe;
+  font-size:22px;
+  line-height:1.8;
+  margin-top:10px;
+  margin-bottom:20px;
+}
+
+.enter-btn{
+  margin-top:40px;
+  padding:16px 45px;
+  font-size:1.2rem;
+  font-weight:bold;
+  color:#00f7ff;
+  background:rgba(0, 255, 255,0.08);
+  border:2px solid #00f7ff;
+  border-radius:50px;
+  cursor:pointer;
+  overflow:hidden;
+  position:relative;
+  transition:all .4s ease;
+  box-shadow:
+  0 0 10px #00f7ff
+  0 0 25px rgba(0, 247,255,.4);
+}
+
+.enter-btn:hover{
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:
+  0 0 20px #00f7ff,
+  0 0 40px #00f7ff,
+  0 0 80px rgba(0,247,255,.6);
+}
+
+.enter-btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:70%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.6),
+    transparent
+  );
+  transition:.8s;
+}
+
+.enter-btn:hover::before{
+  left:130%;
+}
+
+.hero{
+  width:620px;
+  padding:45px;
+  text-align:center;
+  border-radius:25px;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 0 40px rgba(0,180,255,.15);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  max-width:90%;
+  animation: herofade 1.4s ease-out forwards;
+  position:relative;
+  overflow:hidden;
+}
+
+.terminal {
+  animation:terminalBoot 1.2s ease-out forwards,
+  floatbox 5s ease-in-out 1.2s infinit;
+  margin-top:20px;
+  margin-bottom:30px;
+  padding:28px;
+  width:560px;
+  max-width:90%;
+  background:rgba(5, 18,30,0.85);
+  border: 2px solid #00eaff;
+  border-radius:18px;
+  box-shadow: 0 0 15px rgba(0,255,231,.3),
+  0 0 30px rgba(0, 255,231,.2),
+  inset 0 0 15px rgba(0,255,231,.08);
+  backdrop-filter:blur(10px);
+}
+
+@keyframes floatbox{
+  0%{
+    transform:translateY(0px);
+  }
+  50%{
+    transform:translateY(-6px);
+  }
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+.typewriter h2 {
+  color:#00ffe7;
+  font-family:Consolas, monospace;
+  font-size:1.2rem;
+  margin:0;
+  text-shadow:0 0 10px #00ffe7;
+}
+
+.typewriter span {
+  animation:blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity:0;
+  }
+}
+
+.hero button{
+  margin-top:8px;
+}
+
+@keyframes herofade{
+  from {
+    opacity:0;
+    transform: translateY(40px) scale(0.96);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+@keyframes glow{
+  from{
+    text-shadow: 0 0 10px #00f5ff,
+    0 0 25px #00f5ff;
+  }
+
+  to{
+    text-shadow: 0 0 20px #00f5ff,
+    0 0 45px #00f5ff,
+    0 0 70px #00f5ff;
+  }
+}
+
+@keyframes pulse{
+  0%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.05);
+  }
+  100%{
+    transform:scale(1);
+  }
+}
+
+@keyframes imageFloat{
+  0%{
+    transform:translateY(0px);
+  }
+
+  25%{
+    transform:translate(-6px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  75%{
+    transform:translateY(-6px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+.hero-image{
+  width:85%;
+  max-width:550px;
+  margin:35px auto;
+  border-radius:18px;
+  box-shadow:0 0 35px rgba(0, 245,255,.25);
+  transition:.5s;
+  display:block;
+
+  animation:imageFloat 6s ease-in-out infinit;
+}
+
+.hero-image:hover{
+  transform:scale(1.04);
+  box-shadow:
+  0 0 30px #00eaff, 
+  0 0 60px #00eaff,
+  0 0 90px rgba(0,234,255,.5);
+}
+
+.particles-background {
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+
+#tsparticles {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
+.hero > *:not(.particles-background) {
+  position:relative;
+  z-index:1;
+}
+
+@keyframes titleSlide{
+  0%{
+    opacity:0;
+    transform:translateY(-40px);
+    letter-spacing:8px;
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0);
+    letter-spacing:1px;
+  }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes terminalBoot {
+  0%{
+    opacity:0;
+    transform:translateY(40px) scale(.9);
+    filter:blur(10);
+  }
+
+  70%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+.office {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #050816;
+  color: #00f7ff;
+  animation: officeFade 1s ease;
+  text-align: center;
+}
+
+.office h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 20px cyan;
+}
+
+.office p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+@keyframes officeFade {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.dashboard {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(0,247,255,0.3);
+  border-radius: 18px;
+  padding: 25px;
+  backdrop-filter: blur(12px);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0,247,255,0.5);
+}
+
+.card h2 {
+  color: #00f7ff;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #d8d8d8;
+}
